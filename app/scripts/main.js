@@ -9,13 +9,15 @@ var scene = new ScrollScene({duration: 300})
 
 	$(document).ready(function($) {
 		// build tween
-		var tween = TweenMax.staggerFromTo("img.left-image", 0.5, {opacity: 0, left: -150}, { opacity: 1.0, left: 0}, 0.15);
+		var leftTween = TweenMax.staggerFromTo("img.left-image", 0.5, {opacity: 0, left: -150}, { opacity: 1.0, left: 0}, 0.15);
+		var rightTween = TweenMax.staggerFromTo("img.right-image", 0.5, {opacity: 0, right: -150}, { opacity: 1.0, right: 0}, 0.15);
 
 		// build scene
-		var scene = new ScrollScene({triggerElement: "#trigger1"})
-						.setTween(tween)
+		var scene = new ScrollScene({triggerElement: ".left-fade-in"})
+						.setTween(leftTween)
 						.addTo(controller);
 
-		// show indicators (requires debug extension)
-		scene.addIndicators();
+		var scene2 = new ScrollScene({triggerElement: ".right-fade-in"})
+						.setTween(rightTween)
+						.addTo(controller);
 	});
