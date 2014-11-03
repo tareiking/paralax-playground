@@ -90,3 +90,9 @@ body {
 .spacer-huge {
   height: 500px;
 }
+
+img.left-image {
+  opacity: 0;
+  position: relative;
+  right: 100%;
+}
