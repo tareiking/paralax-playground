@@ -96,3 +96,8 @@ img.left-image {
   position: relative;
   right: 100%;
 }
+
+img.right-image {
+  position: relative;
+  opacity: 0;
+}
